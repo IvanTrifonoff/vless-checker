@@ -1,0 +1,45 @@
+name: VLESS Config Checker
+
+on:
+  schedule:
+    - cron: '0 */4 * * *' # Каждые 4 часа
+  workflow_dispatch: # Возможность ручного запуска
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          pip install requests[socks] python-dotenv
+
+      - name: Install sing-box
+        run: |
+          export VERSION=$(curl -s https://api.github.com/repos/SagerNet/sing-box/releases/latest | grep tag_name | cut -d '"' -f 4 | sed 's/v//')
+          wget https://github.com/SagerNet/sing-box/releases/download/v${VERSION}/sing-box-${VERSION}-linux-amd64.tar.gz
+          tar -xzf sing-box-${VERSION}-linux-amd64.tar.gz
+          sudo mv sing-box-${VERSION}-linux-amd64/sing-box /usr/local/bin/
+          rm -rf sing-box-${VERSION}-linux-amd64*
+
+      - name: Run checker
+        env:
+          TG_TOKEN: ${{ secrets.TG_TOKEN }}
+          TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
+          SUB_PATH: sub.txt
+        run: python vless_checker.py
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add sub.txt
+          git commit -m "Update sub.txt [skip ci]" || echo "No changes to commit"
+          git push
