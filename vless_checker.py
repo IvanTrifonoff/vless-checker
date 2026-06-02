@@ -92,9 +92,11 @@ def get_country_code(name):
 def add_medals(url, entry):
     code = get_country_code(entry.get('name', '')).upper()
     sc = entry.get('success_count', 1)
-    if sc >= 5: new_name = f"🥇 trfnv_checked_{code}_{sc}"
-    elif sc >= 2: new_name = f"✅ trfnv_verified_{code}_{sc}"
-    else: new_name = f"🆕 trfnv_new_{code}"
+    wl_mark = "🛡️WL_" if "51.250." in url else ""
+    
+    if sc >= 5: new_name = f"🥇 {wl_mark}trfnv_checked_{code}_{sc}"
+    elif sc >= 2: new_name = f"✅ {wl_mark}trfnv_verified_{code}_{sc}"
+    else: new_name = f"🆕 {wl_mark}trfnv_new_{code}"
     
     # СТРОГОЕ СТРОКОВОЕ МАНИПУЛИРОВАНИЕ (НИКАКОГО URLPARSE)
     # Это гарантирует 100% сохранность параметров подключения
