@@ -2,8 +2,8 @@ name: VLESS Config Checker
 
 on:
   schedule:
-    - cron: '0 */4 * * *' # Каждые 4 часа
-  workflow_dispatch: # Возможность ручного запуска
+    - cron: '*/30 * * * *' # Каждые 30 минут
+  workflow_dispatch:
 
 jobs:
   check:
@@ -36,12 +36,13 @@ jobs:
           TG_TOKEN: ${{ secrets.TG_TOKEN }}
           TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
           SUB_PATH: sub.txt
+          HISTORY_PATH: history.json
         run: python vless_checker.py
 
       - name: Commit and push changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add sub.txt
-          git commit -m "Update sub.txt [skip ci]" || echo "No changes to commit"
+          git add sub.txt history.json
+          git commit -m "Update sub.txt and history.json [skip ci]" || echo "No changes to commit"
           git push
