@@ -201,15 +201,48 @@ def main():
     send_tg(msg)
 
     # 7. Сохранение
-    # Подписка в Base64 (все рабочие)
+    # 7.1. Общая подписка в Base64 (все рабочие)
     sub_urls = [x[0] for x in final_list]
     with open(SUB_PATH, 'w') as f:
         f.write(base64.b64encode("\n".join(sub_urls).encode()).decode())
     
-    # История в JSON
+    # 7.2. Сегментация по странам
+    country_groups = {}
+    def get_country_code(name):
+        n = name.lower()
+        if "🇷🇺" in n or "russia" in n: return "ru"
+        if "🇩🇪" in n or "germany" in n: return "de"
+        if "🇺🇸" in n or "usa" in n or "united states" in n: return "us"
+        if "🇳🇱" in n or "netherlands" in n: return "nl"
+        if "🇬🇧" in n or "united kingdom" in n: return "gb"
+        if "🇹🇷" in n or "turkey" in n: return "tr"
+        if "🇫🇷" in n or "france" in n: return "fr"
+        if "🇰🇿" in n or "kazakhstan" in n: return "kz"
+        if "🇦🇪" in n or "uae" in n: return "ae"
+        # Поиск по эмодзи флага (упрощенно)
+        flags = {
+            "🇩🇪": "de", "🇺🇸": "us", "🇷🇺": "ru", "🇳🇱": "nl", "🇹🇷": "tr", 
+            "🇫🇷": "fr", "🇬🇧": "gb", "🇰🇿": "kz", "🇦🇪": "ae", "🇱🇹": "lt",
+            "🇫🇮": "fi", "🇸🇪": "se", "🇵🇱": "pl"
+        }
+        for f, code in flags.items():
+            if f in name: return code
+        return "other"
+
+    for url, entry in final_list:
+        code = get_country_code(entry['name'])
+        if code not in country_groups: country_groups[code] = []
+        country_groups[code].append(url)
+    
+    # Сохраняем файлы для каждой страны
+    for code, urls in country_groups.items():
+        with open(f"sub_{code}.txt", 'w') as f:
+            f.write(base64.b64encode("\n".join(urls).encode()).decode())
+    
+    # 7.3. История в JSON
     with open(HISTORY_PATH, 'w') as f:
         json.dump(updated_history, f, indent=2)
             
-    print(f"✅ Done. Ultra: {len(ultra_stable)}, Total Working: {len(final_list)}", flush=True)
+    print(f"✅ Done. Countries: {list(country_groups.keys())}", flush=True)
 
 if __name__ == "__main__": main()
