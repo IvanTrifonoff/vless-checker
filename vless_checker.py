@@ -117,7 +117,14 @@ def main():
             source_urls.extend(links)
         except: pass
 
-    test_urls = list(set(source_urls + list(history.keys())))
+    test_urls = list(set(source_urls))
+    
+    # Добавляем ссылки из истории (чтобы продолжать тестировать те, что пропали из источника)
+    for base_url, entry in history.items():
+        full_url = f"{base_url}#{entry.get('name', 'Untitled')}"
+        if full_url not in test_urls and base_url not in [u.split('#')[0] for u in test_urls]:
+            test_urls.append(full_url)
+            
     results = []
     with concurrent.futures.ThreadPoolExecutor(max_workers=THREADS) as ex:
         futs = [ex.submit(test_worker, u, i) for i, u in enumerate(test_urls)]
@@ -128,9 +135,11 @@ def main():
     now_ts = int(time.time())
     updated_history = {}
     for r in results:
-        url = r['url']
+        full_url = r['url']
+        base_url = full_url.split('#')[0] if '#' in full_url else full_url
         is_ok = r['success']
-        entry = history.get(url, {"success_count": 0, "fail_count": 0, "first_seen": now_ts, "name": r['name']})
+        
+        entry = history.get(base_url, {"success_count": 0, "fail_count": 0, "first_seen": now_ts, "name": r['name']})
         if is_ok:
             entry['success_count'] += 1
             entry['fail_count'] = 0
@@ -139,11 +148,12 @@ def main():
         else:
             entry['fail_count'] += 1
         entry['last_test'] = now_ts
-        entry['name'] = r['name']
+        entry['name'] = r['name'] # Обновляем имя
+        
         if entry['fail_count'] >= 2: continue
-        updated_history[url] = entry
+        updated_history[base_url] = entry
 
-    working = [(u, e) for u, e in updated_history.items() if e.get('fail_count', 0) == 0]
+    working = [(base_url, e) for base_url, e in updated_history.items() if e.get('fail_count', 0) == 0]
     working.sort(key=lambda x: (-x[1].get('success_count', 0), -x[1].get('last_speed', 0)))
     
     # Общая подписка
