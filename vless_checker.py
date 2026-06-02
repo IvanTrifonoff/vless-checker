@@ -46,6 +46,7 @@ def generate_config(d, port):
     tt = p.get('type', 'tcp')
     if tt == 'ws': out['transport'] = {"type": "ws", "path": p.get('path', '/'), "headers": {"Host": p.get('host', sni)}}
     elif tt == 'grpc': out['transport'] = {"type": "grpc", "service_name": p.get('serviceName', '')}
+    elif tt in ['xhttp', 'httpupgrade']: out['transport'] = {"type": "httpupgrade", "path": p.get('path', '/'), "host": p.get('host', sni)}
     return {"log": {"level": "error"}, "inbounds": [{"type": "socks", "listen": "127.0.0.1", "listen_port": port}], "outbounds": [out]}
 
 def test_worker(url, idx):
