@@ -9,6 +9,7 @@ SUB_PATH = os.getenv('SUB_PATH', 'sub.txt')
 HISTORY_PATH = os.getenv('HISTORY_PATH', 'history.json')
 SOURCE_URLS = [
     "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/main/Vless-Reality-White-Lists-Rus-Mobile.txt",
+    "https://raw.githubusercontent.com/AvenCores/goida-vpn-configs/refs/heads/main/githubmirror/26.txt",
     "https://raw.githubusercontent.com/AirLinkVPN1/AirLinkVPN/refs/heads/main/rkn_white_list"
 ]
 THREADS = 15
