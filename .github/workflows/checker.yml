@@ -32,16 +32,17 @@ jobs:
           rm -rf sing-box-${VERSION}-linux-amd64*
 
       - name: Run checker
-        timeout-minutes: 10
+        timeout-minutes: 15
         env:
           TG_TOKEN: ${{ secrets.TG_TOKEN }}
           TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
           SUB_PATH: sub.txt
           HISTORY_PATH: history.json
-          MAX_RUNTIME: 540 # 9 минут, чтобы успеть закоммитить результаты
+          MAX_RUNTIME: 480 # 8 минут, оставляем запас на сохранение и пуш
         run: python vless_checker.py
 
       - name: Commit and push changes
+        if: always()
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
