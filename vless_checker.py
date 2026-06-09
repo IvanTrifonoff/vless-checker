@@ -14,6 +14,7 @@ SOURCE_URLS = [
 ]
 THREADS = 15
 TEST_FILE_URL = "https://cachefly.cachefly.net/5mb.test"
+CLEANUP_DAYS = 7 # Сколько дней хранить "мертвые" конфиги для фильтрации
 
 tg_session = requests.Session()
 if TELEGRAM_PROXY:
@@ -169,6 +170,7 @@ def main():
             with open(HISTORY_PATH, 'r') as f: history = json.load(f)
         except: history = {}
 
+    now_ts = int(time.time())
     source_urls = []
     supported_schemes = ("vless://", "vmess://", "ss://", "hysteria2://")
     for url in SOURCE_URLS:
@@ -180,13 +182,26 @@ def main():
         except Exception as e:
             print(f"⚠️ Error fetching {url}: {e}")
 
-    test_urls = list(set(source_urls))
-    
+    # Сначала собираем всех кандидатов (из источников + из истории)
+    all_candidates = list(set(source_urls))
     for base_url, entry in history.items():
         full_url = f"{base_url}#{entry.get('name', 'Untitled')}"
-        if full_url not in test_urls and base_url not in [u.split('#')[0] for u in test_urls]:
-            test_urls.append(full_url)
-            
+        # Добавляем тех, кого нет в источниках, но кто еще не совсем устарел
+        if base_url not in [u.split('#')[0] for u in all_candidates]:
+            if now_ts - entry.get('last_test', 0) < 86400 * 3:
+                all_candidates.append(full_url)
+
+    # ФИЛЬТРАЦИЯ: Убираем тех, кто уже помечен как "мертвый" (2+ ошибки)
+    # Это главная оптимизация, чтобы не перепроверять мусор из источников
+    test_urls = []
+    for u in all_candidates:
+        base_url = u.split('#')[0]
+        if base_url in history and history[base_url].get('fail_count', 0) >= 2:
+            continue
+        test_urls.append(u)
+
+    print(f"📊 Total candidates: {len(all_candidates)}, skipping known dead. Testing: {len(test_urls)}", flush=True)
+
     results = []
     with concurrent.futures.ThreadPoolExecutor(max_workers=THREADS) as ex:
         futs = [ex.submit(test_worker, u, i) for i, u in enumerate(test_urls)]
@@ -194,8 +209,8 @@ def main():
             r = f.result()
             if r: results.append(r)
 
-    now_ts = int(time.time())
     updated_history = {}
+    # Обрабатываем результаты тестов
     for r in results:
         full_url = r['url']
         base_url = full_url.split('#')[0] if '#' in full_url else full_url
@@ -211,10 +226,17 @@ def main():
             entry['fail_count'] += 1
         entry['last_test'] = now_ts
         entry['name'] = r['name']
-        
-        if entry['fail_count'] >= 2: continue
         updated_history[base_url] = entry
 
+    # Сохраняем в историю также и тех, кого мы пропустили (мертвых), 
+    # чтобы помнить о них при следующем запуске.
+    for base_url, entry in history.items():
+        if base_url not in updated_history:
+            # Очистка: удаляем совсем старые записи (старше CLEANUP_DAYS)
+            if now_ts - entry.get('last_test', 0) < 86400 * CLEANUP_DAYS:
+                updated_history[base_url] = entry
+
+    # Формируем списки рабочих прокси
     working = [(base_url, e) for base_url, e in updated_history.items() if e.get('fail_count', 0) == 0]
     working.sort(key=lambda x: (-x[1].get('success_count', 0), -x[1].get('last_speed', 0)))
     
@@ -231,6 +253,6 @@ def main():
         with open(f"sub_{code}.txt", 'w') as f: f.write(base64.b64encode("\n".join(urls).encode()).decode())
     
     with open(HISTORY_PATH, 'w') as f: json.dump(updated_history, f, indent=2)
-    print(f"✅ Done. Total: {len(working)}", flush=True)
+    print(f"✅ Done. Total working: {len(working)}. History size: {len(updated_history)}", flush=True)
 
 if __name__ == "__main__": main()
