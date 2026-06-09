@@ -14,7 +14,8 @@ SOURCE_URLS = [
 ]
 THREADS = 15
 TEST_FILE_URL = "https://cachefly.cachefly.net/5mb.test"
-CLEANUP_DAYS = 7 # Сколько дней хранить "мертвые" конфиги для фильтрации
+CLEANUP_DAYS = 7 
+MAX_RUNTIME = int(os.getenv('MAX_RUNTIME', 540)) # 9 минут по умолчанию
 
 tg_session = requests.Session()
 if TELEGRAM_PROXY:
@@ -33,16 +34,18 @@ def parse_proxy(url):
                 "port": int(p.port) if p.port else 443, "params": params, "name": name
             }
         elif scheme == "vmess":
-            b64_data = url[8:].split('#')[0]
-            data = json.loads(base64.b64decode(b64_data + "==").decode())
-            return {
-                "type": "vmess", "url": url, "uuid": data['id'], "address": data['add'],
-                "port": int(data['port']), "name": data.get('ps', name),
-                "params": {
-                    "net": data.get('net'), "path": data.get('path'), "tls": data.get('tls'),
-                    "sni": data.get('sni'), "host": data.get('host'), "scy": data.get('scy', 'auto')
+            try:
+                b64_data = url[8:].split('#')[0]
+                data = json.loads(base64.b64decode(b64_data + "==").decode())
+                return {
+                    "type": "vmess", "url": url, "uuid": data['id'], "address": data['add'],
+                    "port": int(data['port']), "name": data.get('ps', name),
+                    "params": {
+                        "net": data.get('net'), "path": data.get('path'), "tls": data.get('tls'),
+                        "sni": data.get('sni'), "host": data.get('host'), "scy": data.get('scy', 'auto')
+                    }
                 }
-            }
+            except: return None
         elif scheme == "ss":
             try:
                 user_info = p.username
@@ -163,6 +166,7 @@ def add_medals(url, entry):
     return url + "#" + new_name
 
 def main():
+    start_time = time.time()
     print(f"🚀 Proxy Stability Checker started at {datetime.now().strftime('%H:%M:%S')}", flush=True)
     history = {}
     if os.path.exists(HISTORY_PATH):
@@ -182,17 +186,13 @@ def main():
         except Exception as e:
             print(f"⚠️ Error fetching {url}: {e}")
 
-    # Сначала собираем всех кандидатов (из источников + из истории)
     all_candidates = list(set(source_urls))
     for base_url, entry in history.items():
         full_url = f"{base_url}#{entry.get('name', 'Untitled')}"
-        # Добавляем тех, кого нет в источниках, но кто еще не совсем устарел
         if base_url not in [u.split('#')[0] for u in all_candidates]:
             if now_ts - entry.get('last_test', 0) < 86400 * 3:
                 all_candidates.append(full_url)
 
-    # ФИЛЬТРАЦИЯ: Убираем тех, кто уже помечен как "мертвый" (2+ ошибки)
-    # Это главная оптимизация, чтобы не перепроверять мусор из источников
     test_urls = []
     for u in all_candidates:
         base_url = u.split('#')[0]
@@ -203,14 +203,20 @@ def main():
     print(f"📊 Total candidates: {len(all_candidates)}, skipping known dead. Testing: {len(test_urls)}", flush=True)
 
     results = []
+    # Постепенная обработка результатов для возможности выхода по таймауту
     with concurrent.futures.ThreadPoolExecutor(max_workers=THREADS) as ex:
-        futs = [ex.submit(test_worker, u, i) for i, u in enumerate(test_urls)]
+        futs = {ex.submit(test_worker, u, i): u for i, u in enumerate(test_urls)}
         for f in concurrent.futures.as_completed(futs):
-            r = f.result()
-            if r: results.append(r)
+            if time.time() - start_time > MAX_RUNTIME:
+                print(f"⏰ Time limit reached ({MAX_RUNTIME}s). Saving partial results...", flush=True)
+                break
+            try:
+                r = f.result()
+                if r: results.append(r)
+            except: pass
 
-    updated_history = {}
-    # Обрабатываем результаты тестов
+    # Обновляем историю только теми результатами, которые успели получить
+    updated_history = history.copy()
     for r in results:
         full_url = r['url']
         base_url = full_url.split('#')[0] if '#' in full_url else full_url
@@ -228,16 +234,14 @@ def main():
         entry['name'] = r['name']
         updated_history[base_url] = entry
 
-    # Сохраняем в историю также и тех, кого мы пропустили (мертвых), 
-    # чтобы помнить о них при следующем запуске.
-    for base_url, entry in history.items():
-        if base_url not in updated_history:
-            # Очистка: удаляем совсем старые записи (старше CLEANUP_DAYS)
-            if now_ts - entry.get('last_test', 0) < 86400 * CLEANUP_DAYS:
-                updated_history[base_url] = entry
+    # Очистка старых записей
+    final_history = {}
+    for base_url, entry in updated_history.items():
+        if now_ts - entry.get('last_test', 0) < 86400 * CLEANUP_DAYS:
+            final_history[base_url] = entry
 
-    # Формируем списки рабочих прокси
-    working = [(base_url, e) for base_url, e in updated_history.items() if e.get('fail_count', 0) == 0]
+    # Формируем списки рабочих прокси (только на основе полной истории)
+    working = [(base_url, e) for base_url, e in final_history.items() if e.get('fail_count', 0) == 0]
     working.sort(key=lambda x: (-x[1].get('success_count', 0), -x[1].get('last_speed', 0)))
     
     all_urls = [add_medals(u, e) for u, e in working]
@@ -252,7 +256,7 @@ def main():
     for code, urls in country_groups.items():
         with open(f"sub_{code}.txt", 'w') as f: f.write(base64.b64encode("\n".join(urls).encode()).decode())
     
-    with open(HISTORY_PATH, 'w') as f: json.dump(updated_history, f, indent=2)
-    print(f"✅ Done. Total working: {len(working)}. History size: {len(updated_history)}", flush=True)
+    with open(HISTORY_PATH, 'w') as f: json.dump(final_history, f, indent=2)
+    print(f"✅ Done. Results in this run: {len(results)}. Total working: {len(working)}", flush=True)
 
 if __name__ == "__main__": main()
