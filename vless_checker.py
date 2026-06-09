@@ -1,4 +1,4 @@
-import os, json, time, base64, requests, subprocess, concurrent.futures
+import os, json, time, base64, requests, subprocess, concurrent.futures, html
 from urllib.parse import urlparse, parse_qs, unquote
 from datetime import datetime
 
@@ -117,9 +117,11 @@ def main():
     for url in SOURCE_URLS:
         try:
             resp = requests.get(url, timeout=10)
-            links = [l.strip() for l in resp.text.splitlines() if l.startswith("vless://")]
+            text = html.unescape(resp.text)
+            links = [l.strip() for l in text.splitlines() if l.strip().startswith("vless://")]
             source_urls.extend(links)
-        except: pass
+        except Exception as e:
+            print(f"⚠️ Error fetching {url}: {e}")
 
     test_urls = list(set(source_urls))
     
