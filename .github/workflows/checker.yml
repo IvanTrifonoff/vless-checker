@@ -32,11 +32,13 @@ jobs:
           rm -rf sing-box-${VERSION}-linux-amd64*
 
       - name: Run checker
+        timeout-minutes: 10
         env:
           TG_TOKEN: ${{ secrets.TG_TOKEN }}
           TG_CHAT_ID: ${{ secrets.TG_CHAT_ID }}
           SUB_PATH: sub.txt
           HISTORY_PATH: history.json
+          MAX_RUNTIME: 540 # 9 минут, чтобы успеть закоммитить результаты
         run: python vless_checker.py
 
       - name: Commit and push changes
