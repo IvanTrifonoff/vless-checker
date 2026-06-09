@@ -19,39 +19,97 @@ tg_session = requests.Session()
 if TELEGRAM_PROXY:
     tg_session.proxies = {'http': TELEGRAM_PROXY, 'https': TELEGRAM_PROXY}
 
-def parse_vless(url):
+def parse_proxy(url):
     try:
         p = urlparse(url)
-        params = {k: v[0] for k, v in parse_qs(p.query).items()}
-        return {
-            "url": url, "uuid": p.username, "address": p.hostname,
-            "port": int(p.port) if p.port else 443, "params": params,
-            "name": unquote(p.fragment) if p.fragment else "Untitled"
-        }
+        scheme = p.scheme.lower()
+        name = unquote(p.fragment) if p.fragment else "Untitled"
+        
+        if scheme == "vless" or (scheme == "ss" and "security=reality" in url):
+            params = {k: v[0] for k, v in parse_qs(p.query).items()}
+            return {
+                "type": "vless", "url": url, "uuid": p.username, "address": p.hostname,
+                "port": int(p.port) if p.port else 443, "params": params, "name": name
+            }
+        elif scheme == "vmess":
+            b64_data = url[8:].split('#')[0]
+            data = json.loads(base64.b64decode(b64_data + "==").decode())
+            return {
+                "type": "vmess", "url": url, "uuid": data['id'], "address": data['add'],
+                "port": int(data['port']), "name": data.get('ps', name),
+                "params": {
+                    "net": data.get('net'), "path": data.get('path'), "tls": data.get('tls'),
+                    "sni": data.get('sni'), "host": data.get('host'), "scy": data.get('scy', 'auto')
+                }
+            }
+        elif scheme == "ss":
+            try:
+                user_info = p.username
+                if not user_info: return None
+                decoded = base64.b64decode(user_info + "==").decode()
+                if ':' not in decoded: return None
+                method, password = decoded.split(":", 1)
+                return {
+                    "type": "shadowsocks", "url": url, "method": method, "password": password,
+                    "address": p.hostname, "port": int(p.port), "name": name
+                }
+            except: return None
+        elif scheme == "hysteria2":
+            params = {k: v[0] for k, v in parse_qs(p.query).items()}
+            return {
+                "type": "hysteria2", "url": url, "password": p.username, "address": p.hostname,
+                "port": int(p.port) if p.port else 443, "params": params, "name": name
+            }
     except: return None
 
 def generate_config(d, port):
-    p = d['params']
-    sec = p.get('security', '').lower()
-    sni = p.get('sni', p.get('peer', d['address']))
-    out = {"type": "vless", "tag": "proxy", "server": d['address'], "server_port": d['port'], "uuid": d['uuid']}
-    if p.get('flow'): out['flow'] = p.get('flow')
-    if sec == 'reality':
-        out['tls'] = {
-            "enabled": True, "server_name": sni,
-            "utls": {"enabled": True, "fingerprint": p.get('fp', 'chrome')},
-            "reality": {"enabled": True, "public_key": p.get('pbk', ''), "short_id": p.get('sid', '')}
-        }
-    elif sec == 'tls' or d['port'] == 443:
-        out['tls'] = {"enabled": True, "server_name": sni, "utls": {"enabled": True}, "insecure": True}
-    tt = p.get('type', 'tcp')
-    if tt == 'ws': out['transport'] = {"type": "ws", "path": p.get('path', '/'), "headers": {"Host": p.get('host', sni)}}
-    elif tt == 'grpc': out['transport'] = {"type": "grpc", "service_name": p.get('serviceName', '')}
-    elif tt in ['xhttp', 'httpupgrade']: out['transport'] = {"type": "httpupgrade", "path": p.get('path', '/'), "host": p.get('host', sni)}
-    return {"log": {"level": "error"}, "inbounds": [{"type": "socks", "listen": "127.0.0.1", "listen_port": port}], "outbounds": [out]}
+    t = d['type']
+    out = {"tag": "proxy"}
+    
+    if t == "vless":
+        p = d['params']
+        sec = p.get('security', '').lower()
+        sni = p.get('sni', p.get('peer', d['address']))
+        out.update({"type": "vless", "server": d['address'], "server_port": d['port'], "uuid": d['uuid']})
+        if p.get('flow'): out['flow'] = p.get('flow')
+        if sec == 'reality':
+            out['tls'] = {
+                "enabled": True, "server_name": sni,
+                "utls": {"enabled": True, "fingerprint": p.get('fp', 'chrome')},
+                "reality": {"enabled": True, "public_key": p.get('pbk', ''), "short_id": p.get('sid', '')}
+            }
+        elif sec == 'tls' or d['port'] == 443:
+            out['tls'] = {"enabled": True, "server_name": sni, "utls": {"enabled": True}, "insecure": True}
+        tt = p.get('type', 'tcp')
+        if tt == 'ws': out['transport'] = {"type": "ws", "path": p.get('path', '/'), "headers": {"Host": p.get('host', sni)}}
+        elif tt == 'grpc': out['transport'] = {"type": "grpc", "service_name": p.get('serviceName', '')}
+        elif tt in ['xhttp', 'httpupgrade']: out['transport'] = {"type": "httpupgrade", "path": p.get('path', '/'), "host": p.get('host', sni)}
+
+    elif t == "vmess":
+        p = d['params']
+        out.update({"type": "vmess", "server": d['address'], "server_port": d['port'], "uuid": d['uuid'], "security": p.get('scy', 'auto'), "alter_id": 0})
+        if p.get('tls') == 'tls':
+            out['tls'] = {"enabled": True, "server_name": p.get('sni', p.get('host', d['address'])), "insecure": True}
+        if p.get('net') == 'ws':
+            out['transport'] = {"type": "ws", "path": p.get('path', '/'), "headers": {"Host": p.get('host', p.get('sni', ''))}}
+
+    elif t == "shadowsocks":
+        out.update({"type": "shadowsocks", "server": d['address'], "server_port": d['port'], "method": d['method'], "password": d['password']})
+
+    elif t == "hysteria2":
+        p = d['params']
+        out.update({"type": "hysteria2", "server": d['address'], "server_port": d['port'], "password": d['password'], "tls": {"enabled": True, "server_name": p.get('sni', d['address']), "insecure": True}})
+        if p.get('obfs') == 'salamander':
+            out['obfs'] = {"type": "salamander", "password": p.get('obfs-password', '')}
+
+    return {
+        "log": {"level": "error"},
+        "inbounds": [{"type": "socks", "listen": "127.0.0.1", "listen_port": port}],
+        "outbounds": [out]
+    }
 
 def test_worker(url, idx):
-    d = parse_vless(url)
+    d = parse_proxy(url)
     if not d: return None
     port = 32000 + idx
     cfg_p = f"cfg_{idx}.json"
@@ -99,14 +157,12 @@ def add_medals(url, entry):
     elif sc >= 2: new_name = f"✅ {wl_mark}trfnv_verified_{code}_{sc}"
     else: new_name = f"🆕 {wl_mark}trfnv_new_{code}"
     
-    # СТРОГОЕ СТРОКОВОЕ МАНИПУЛИРОВАНИЕ (НИКАКОГО URLPARSE)
-    # Это гарантирует 100% сохранность параметров подключения
     if '#' in url:
         return url.rsplit('#', 1)[0] + "#" + new_name
     return url + "#" + new_name
 
 def main():
-    print(f"🚀 VLESS Stability Checker started at {datetime.now().strftime('%H:%M:%S')}", flush=True)
+    print(f"🚀 Proxy Stability Checker started at {datetime.now().strftime('%H:%M:%S')}", flush=True)
     history = {}
     if os.path.exists(HISTORY_PATH):
         try:
@@ -114,18 +170,18 @@ def main():
         except: history = {}
 
     source_urls = []
+    supported_schemes = ("vless://", "vmess://", "ss://", "hysteria2://")
     for url in SOURCE_URLS:
         try:
             resp = requests.get(url, timeout=10)
             text = html.unescape(resp.text)
-            links = [l.strip() for l in text.splitlines() if l.strip().startswith("vless://")]
+            links = [l.strip() for l in text.splitlines() if l.strip().startswith(supported_schemes)]
             source_urls.extend(links)
         except Exception as e:
             print(f"⚠️ Error fetching {url}: {e}")
 
     test_urls = list(set(source_urls))
     
-    # Добавляем ссылки из истории (чтобы продолжать тестировать те, что пропали из источника)
     for base_url, entry in history.items():
         full_url = f"{base_url}#{entry.get('name', 'Untitled')}"
         if full_url not in test_urls and base_url not in [u.split('#')[0] for u in test_urls]:
@@ -154,7 +210,7 @@ def main():
         else:
             entry['fail_count'] += 1
         entry['last_test'] = now_ts
-        entry['name'] = r['name'] # Обновляем имя
+        entry['name'] = r['name']
         
         if entry['fail_count'] >= 2: continue
         updated_history[base_url] = entry
@@ -162,11 +218,9 @@ def main():
     working = [(base_url, e) for base_url, e in updated_history.items() if e.get('fail_count', 0) == 0]
     working.sort(key=lambda x: (-x[1].get('success_count', 0), -x[1].get('last_speed', 0)))
     
-    # Общая подписка
     all_urls = [add_medals(u, e) for u, e in working]
     with open(SUB_PATH, 'w') as f: f.write(base64.b64encode("\n".join(all_urls).encode()).decode())
     
-    # По странам
     country_groups = {}
     for u, e in working:
         if e.get('success_count', 0) < 2: continue
