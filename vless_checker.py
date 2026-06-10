@@ -15,7 +15,7 @@ SOURCE_URLS = [
 THREADS = 15
 TEST_FILE_URL = "https://cachefly.cachefly.net/5mb.test"
 CLEANUP_DAYS = 7 
-MAX_RUNTIME = int(os.getenv('MAX_RUNTIME', 540)) # 9 минут по умолчанию
+MAX_RUNTIME = int(os.getenv('MAX_RUNTIME', 480)) # 8 минут по умолчанию
 
 tg_session = requests.Session()
 if TELEGRAM_PROXY:
@@ -206,14 +206,19 @@ def main():
     # Постепенная обработка результатов для возможности выхода по таймауту
     with concurrent.futures.ThreadPoolExecutor(max_workers=THREADS) as ex:
         futs = {ex.submit(test_worker, u, i): u for i, u in enumerate(test_urls)}
-        for f in concurrent.futures.as_completed(futs):
-            if time.time() - start_time > MAX_RUNTIME:
-                print(f"⏰ Time limit reached ({MAX_RUNTIME}s). Saving partial results...", flush=True)
-                break
-            try:
-                r = f.result()
-                if r: results.append(r)
-            except: pass
+        try:
+            for f in concurrent.futures.as_completed(futs):
+                if time.time() - start_time > MAX_RUNTIME:
+                    print(f"⏰ Time limit reached ({MAX_RUNTIME}s). Saving partial results...", flush=True)
+                    # Жестко выключаем экзекутор, не дожидаясь остальных потоков
+                    ex.shutdown(wait=False, cancel_futures=True)
+                    break
+                try:
+                    r = f.result()
+                    if r: results.append(r)
+                except: pass
+        except Exception as e:
+            print(f"⚠️ Executor error: {e}")
 
     # Обновляем историю только теми результатами, которые успели получить
     updated_history = history.copy()
@@ -240,7 +245,7 @@ def main():
         if now_ts - entry.get('last_test', 0) < 86400 * CLEANUP_DAYS:
             final_history[base_url] = entry
 
-    # Формируем списки рабочих прокси (только на основе полной истории)
+    # Формируем списки рабочих прокси
     working = [(base_url, e) for base_url, e in final_history.items() if e.get('fail_count', 0) == 0]
     working.sort(key=lambda x: (-x[1].get('success_count', 0), -x[1].get('last_speed', 0)))
     
