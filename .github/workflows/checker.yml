@@ -2,7 +2,7 @@ name: VLESS Config Checker
 
 on:
   schedule:
-    - cron: '*/30 * * * *' # Каждые 30 минут
+    - cron: '0 3,6,9,12,15,18 * * *' # Каждые 3 часа с 6:00 до 21:00 по МСК
   workflow_dispatch:
 
 jobs:
