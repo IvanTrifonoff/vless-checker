@@ -1,39 +1,39 @@
 {
   "hysteria2://H7mP2xY9kJ4nQ8wR5tF6vB3z@202.146.222.29:443?sni=vk.com&type=tcp&upmbps=10&downmbps=50": {
-    "success_count": 307,
+    "success_count": 308,
     "fail_count": 0,
     "first_seen": 1786213933,
     "name": "0628 | \ud83c\udde8\ud83c\uddf3 HongKong | \ud83c\udff3\ufe0f SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu",
     "last_speed": 1.0,
     "last_lat": 100,
-    "last_test": 1793873881
+    "last_test": 1793906850
   },
   "hysteria2://099830134df5ac3a04a4b21d39b8c395@163.192.14.135:50160?sni=vk.com": {
-    "success_count": 211,
+    "success_count": 212,
     "fail_count": 0,
     "first_seen": 1787682881,
     "name": "0594 | \ud83c\uddfa\ud83c\uddf8 USA | \ud83c\udff3\ufe0f SNI-VK | HYSTERIA2 | \ud83d\udcfa YT | TG: @YoutubeUnBlockRu",
     "last_speed": 1.0,
     "last_lat": 100,
-    "last_test": 1793873881
+    "last_test": 1793906850
   },
   "hysteria2://H7mP2xY9kJ4nQ8wR5tF6vB3z@202.146.222.29:443?sni=vk.com": {
-    "success_count": 202,
+    "success_count": 203,
     "fail_count": 0,
     "first_seen": 1787773407,
     "name": "7567 | \ud83c\udde8\ud83c\uddf3 HongKong | \ud83c\udff3\ufe0f SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu",
     "last_speed": 1.0,
-    "last_lat": 100,
-    "last_test": 1793873881
+    "last_lat": 99,
+    "last_test": 1793906850
   },
   "hysteria2://H7mP2xY9kJ4nQ8wR5tF6vB3z@vpn-tw-002.fastervpn.world:443?sni=vk.com": {
-    "success_count": 199,
+    "success_count": 200,
     "fail_count": 0,
     "first_seen": 1787773407,
     "name": "5087 | \ud83c\udf10 Unknown | \ud83c\udff3\ufe0f SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu",
     "last_speed": 1.0,
     "last_lat": 99,
-    "last_test": 1793873881
+    "last_test": 1793906850
   },
   "hysteria2://3d7634af8cb2c6cb4bac1c0efad8b43d@152.67.200.82:50160?sni=vk.com": {
     "success_count": 171,
@@ -296,63 +296,6 @@
     "last_speed": 1.0,
     "last_lat": 99
   },
-  "vless://872a2c34-23f4-4dc8-89c8-79e8817415c5@185.86.145.183:443?security=tls&sni=cdns2.wyre-file.ru&alpn=http%2F1.1&type=ws&path=%2Fnl7ws&host=cdns2.wyre-file.ru&fp=chrome": {
-    "success_count": 1,
-    "fail_count": 2,
-    "first_seen": 1793225301,
-    "name": "\ud83c\uddf3\ud83c\uddf1 The Netherlands [*CIDR] VK",
-    "last_speed": 1.0,
-    "last_lat": 100,
-    "last_test": 1793296757
-  },
-  "vless://872a2c34-23f4-4dc8-89c8-79e8817415c5@185.86.145.183:443?security=tls&sni=cdns2.wyre-file.ru&alpn=http%2F1.1&type=ws&path=%2Fnl7ws&host=cdns2.wyre-file.ru&fp=android": {
-    "success_count": 1,
-    "fail_count": 2,
-    "first_seen": 1793225301,
-    "name": "\ud83c\uddf3\ud83c\uddf1 The Netherlands | [*CIDR] VK",
-    "last_speed": 1.0,
-    "last_lat": 99,
-    "last_test": 1793296757
-  },
-  "vless://872a2c34-23f4-4dc8-89c8-79e8817415c5@185.86.145.183:443?security=tls&sni=cdns2.wyre-file.ru&alpn=http%2F1.1&type=ws&path=%2Fnl7ws&host=cdns2.wyre-file.ru&fp=edge": {
-    "success_count": 1,
-    "fail_count": 2,
-    "first_seen": 1793225301,
-    "name": "\ud83c\uddf3\ud83c\uddf1 The Netherlands [*CIDR] VK",
-    "last_speed": 1.0,
-    "last_lat": 100,
-    "last_test": 1793296757
-  },
-  "vless://872a2c34-23f4-4dc8-89c8-79e8817415c5@185.86.145.183:443?security=tls&sni=cdns2.wyre-file.ru&alpn=http%2F1.1&type=ws&path=%2Fnl7ws&host=cdns2.wyre-file.ru&fp=safari": {
-    "success_count": 1,
-    "fail_count": 2,
-    "first_seen": 1793225301,
-    "name": "\ud83c\uddf3\ud83c\uddf1 The Netherlands | [*CIDR] VK",
-    "last_speed": 1.0,
-    "last_lat": 99,
-    "last_test": 1793296757
-  },
-  "vless://ea277838-a188-44f1-a2e8-94aa110c4f27@185.178.208.140:443?type=xhttp&security=tls&encryption=none&path=%2Fapi%2Fv2%2Fevents&host=static.bakarova-top.ru&sni=static.bakarova-top.ru&headerType=none&mode=packet-up&fp=qq": {
-    "success_count": 0,
-    "fail_count": 2,
-    "first_seen": 1793265437,
-    "name": "\ud83c\uddf5\ud83c\uddf1 Poland | [*CIDR]",
-    "last_test": 1793296757
-  },
-  "vless://a5893c8b-28a2-4947-9a1c-708db25506c3@185.229.9.240:443?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=1uox9vg8wi_akm_7I_v8xM0MF32jTtqkxlvnqC9Yux8&security=reality&sid=27e53bbcab7593d7&sni=yandex.ru&type=raw": {
-    "success_count": 0,
-    "fail_count": 2,
-    "first_seen": 1793265437,
-    "name": "\ud83c\uddf5\ud83c\uddf1\u041e\u0431\u0445\u043e\u0434\u044b - TG: AirLinkVPNBot |0096|",
-    "last_test": 1793296757
-  },
-  "vless://9b560e60-0e08-4ee7-af43-1cb0f02e6cef@apis.heoleti.pro:2096?security=tls&sni=apis.heoleti.pro&type=xhttp&host=apis.heoleti.pro&path=%2Fchxh&fp=firefox": {
-    "success_count": 0,
-    "fail_count": 2,
-    "first_seen": 1793265437,
-    "name": "\ud83c\uddf3\ud83c\uddf1 The Netherlands | [*CIDR] VK",
-    "last_test": 1793296757
-  },
   "vless://c6628db6-025d-40e8-b79d-033f4372a6b7@189.74.114.93:443?encryption=none&security=tls&serviceName=3e99d50d5740985d&sni=api.mediaklenov.cc&type=grpc&fp=firefox": {
     "success_count": 4,
     "fail_count": 2,
@@ -371,13 +314,6 @@
     "last_lat": 100,
     "last_test": 1793313611
   },
-  "vless://05c66efe-4f1e-4df9-99e6-2b1b624fa7ae@5.42.113.212:443?encryption=none&security=tls&sni=sg.jinggai.online&alpn=http%2F1.1&type=ws&path=%2Fconnect%2F01&host=sg.jinggai.online&fp=qq": {
-    "success_count": 0,
-    "fail_count": 2,
-    "first_seen": 1793265437,
-    "name": "\ud83c\udde8\ud83c\udde6 Canada | \ud83c\udf10 [*CIDR]",
-    "last_test": 1793296757
-  },
   "vless://34ec30ca-c499-46c5-a0b9-20638e5197e9@pulse-resume.pro:443?security=tls&sni=pulse-resume.pro&type=ws&host=pulse-resume.pro&path=%2Famws&fp=qq": {
     "success_count": 1,
     "fail_count": 2,
@@ -387,146 +323,6 @@
     "last_lat": 100,
     "last_test": 1793313611
   },
-  "vless://1e2b9c0c-4f9b-56f5-a062-1c4f2d2aa200@84.201.146.8:443?encryption=none&security=reality&sni=max.ru&pbk=biyXF3Egpu0ul4Jyf04Vh1Zl6u3JGXJ2k5y5y7pDjgo&type=xhttp&host=max.ru&path=%2F&fp=qq": {
-    "success_count": 0,
-    "fail_count": 2,
-    "first_seen": 1793265437,
-    "name": "\ud83c\uddf3\ud83c\uddf1 The Netherlands | [*CIDR] YA",
-    "last_test": 1793296757
-  },
-  "vless://1e2b9c0c-4f9b-56f5-a062-1c4f2d2aa200@84.201.146.8:443?encryption=none&security=reality&sni=max.ru&pbk=biyXF3Egpu0ul4Jyf04Vh1Zl6u3JGXJ2k5y5y7pDjgo&type=xhttp&host=max.ru&path=%2F&fp=chrome": {
-    "success_count": 0,
-    "fail_count": 2,
-    "first_seen": 1793265437,
-    "name": "\ud83c\uddf3\ud83c\uddf1 The Netherlands | [*CIDR] YA",
-    "last_test": 1793296757
-  },
-  "vless://a5893c8b-28a2-4947-9a1c-708db25506c3@185.229.9.240:443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=YBIVqJtsRjtlEYmEyfRRL_rh5k49rY20jMVGbaQlySI&security=reality&sid=27e53bbcab7593d7&sni=max.ru&type=raw": {
-    "success_count": 0,
-    "fail_count": 2,
-    "first_seen": 1793265437,
-    "name": "\ud83c\uddf5\ud83c\uddf1\u041e\u0431\u0445\u043e\u0434\u044b - TG: AirLinkVPNBot |0094|",
-    "last_test": 1793296757
-  },
-  "vless://05c66efe-4f1e-4df9-99e6-2b1b624fa7ae@5.42.113.212:443?encryption=none&security=tls&sni=sg.jinggai.online&alpn=http%2F1.1&type=ws&path=%2Fconnect%2F01&host=sg.jinggai.online&fp=chrome": {
-    "success_count": 0,
-    "fail_count": 2,
-    "first_seen": 1793265437,
-    "name": "\ud83c\udde8\ud83c\udde6 Canada [*CIDR]",
-    "last_test": 1793296757
-  },
-  "vless://a5893c8b-28a2-4947-9a1c-708db25506c3@95.129.236.54:443?encryption=none&fp=firefox&path=%2Fgateway%2Fv1%2Fws%2F7b101e2ddcdc731ab25531e04f964444&security=tls&sni=client.lk.nehtar.online&type=ws": {
-    "success_count": 0,
-    "fail_count": 2,
-    "first_seen": 1793265437,
-    "name": "\ud83c\uddf5\ud83c\uddf1\u041e\u0431\u0445\u043e\u0434\u044b - TG: AirLinkVPNBot |0087|",
-    "last_test": 1793296757
-  },
-  "vless://c3db7657-88ce-42a6-b998-1e0364b277ac@78.159.250.34:4510?encryption=none&flow=xtls-rprx-vision&pbk=hkvjyE8WMKHvdGfMta7PAIGz6HAv2WiXvWvAQmsE_DM&security=reality&sid=2d0c188798bae174&sni=9c99da.usecache.net&type=raw": {
-    "success_count": 0,
-    "fail_count": 2,
-    "first_seen": 1793265437,
-    "name": "\ud83c\uddf5\ud83c\uddf1\u041e\u0431\u0445\u043e\u0434\u044b - TG: AirLinkVPNBot |0098|",
-    "last_test": 1793296757
-  },
-  "vless://4c346148-ece9-487a-bffb-ba5a399b2d71@188.225.83.133:443?encryption=none&mode=gun&pbk=JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw&security=reality&sid=a1b2c3d4e5f6a7b8&type=grpc": {
-    "success_count": 0,
-    "fail_count": 2,
-    "first_seen": 1793265437,
-    "name": "\ud83c\uddea\ud83c\uddea\u041e\u0431\u0445\u043e\u0434\u044b - TG: AirLinkVPNBot |0072|",
-    "last_test": 1793296757
-  },
-  "vless://c3db7657-88ce-42a6-b998-1e0364b277ac@78.159.250.34:4510?encryption=none&flow=xtls-rprx-vision&fp=random&pbk=hkvjyE8WMKHvdGfMta7PAIGz6HAv2WiXvWvAQmsE_DM&security=reality&sid=2d0c188798bae174&sni=9c99da.usecache.net&type=raw": {
-    "success_count": 0,
-    "fail_count": 2,
-    "first_seen": 1793265437,
-    "name": "\ud83c\uddf5\ud83c\uddf1\u041e\u0431\u0445\u043e\u0434\u044b - TG: AirLinkVPNBot |0090|",
-    "last_test": 1793296757
-  },
-  "vless://c6e3c24c-ce20-4ad5-8c8c-68cb05890ea8@93.188.184.150:443?encryption=none&fp=ios&mode=gun&pbk=aYz4_13W8gtAXGBrWeqJXtExahAJ9kUPDapqeyAlYCk&security=reality&serviceName=ru-api&sni=ru-1-2.unturned-rust-dead.lol&type=grpc": {
-    "success_count": 0,
-    "fail_count": 2,
-    "first_seen": 1793265437,
-    "name": "\ud83c\uddf7\ud83c\uddfa\u041e\u0431\u0445\u043e\u0434\u044b - TG: AirLinkVPNBot |0030|",
-    "last_test": 1793296757
-  },
-  "vless://9b560e60-0e08-4ee7-af43-1cb0f02e6cef@185.86.145.142:2096?type=xhttp&security=tls&sni=apis.heoleti.pro&path=%2Fchxh&host=apis.heoleti.pro&mode=auto&fp=firefox": {
-    "success_count": 0,
-    "fail_count": 2,
-    "first_seen": 1793265437,
-    "name": "\ud83c\uddf3\ud83c\uddf1 The Netherlands | [*CIDR] VK",
-    "last_test": 1793296757
-  },
-  "vless://ea277838-a188-44f1-a2e8-94aa110c4f27@185.178.208.140:443?encryption=none&mode=auto&path=%2Fapi%2Fv2%2Fevents&security=tls&sni=static.bakarova-top.ru&type=xhttp&fp=firefox": {
-    "success_count": 0,
-    "fail_count": 2,
-    "first_seen": 1793265437,
-    "name": "\ud83c\uddf5\ud83c\uddf1 Poland | [*CIDR]",
-    "last_test": 1793296757
-  },
-  "vless://c3db7657-88ce-42a6-b998-1e0364b277ac@78.159.250.34:4510?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=hkvjyE8WMKHvdGfMta7PAIGz6HAv2WiXvWvAQmsE_DM&security=reality&sid=2d0c188798bae174&sni=9c99da.usecache.net&type=raw": {
-    "success_count": 0,
-    "fail_count": 2,
-    "first_seen": 1793265437,
-    "name": "\ud83c\uddf5\ud83c\uddf1\u041e\u0431\u0445\u043e\u0434\u044b - TG: AirLinkVPNBot |0097|",
-    "last_test": 1793296757
-  },
-  "vless://ea277838-a188-44f1-a2e8-94aa110c4f27@185.178.208.140:443?encryption=none&mode=auto&path=%2Fapi%2Fv2%2Fevents&security=tls&sni=static.bakarova-top.ru&type=xhttp&fp=chrome": {
-    "success_count": 0,
-    "fail_count": 2,
-    "first_seen": 1793265437,
-    "name": "\ud83c\uddf5\ud83c\uddf1 Poland | [*CIDR]",
-    "last_test": 1793296757
-  },
-  "vless://ea277838-a188-44f1-a2e8-94aa110c4f27@185.178.208.140:443?encryption=none&mode=auto&path=%2Fapi%2Fv2%2Fevents&security=tls&sni=static.bakarova-top.ru&type=xhttp&fp=edge": {
-    "success_count": 0,
-    "fail_count": 2,
-    "first_seen": 1793265437,
-    "name": "\ud83c\uddf5\ud83c\uddf1 Poland | [*CIDR]",
-    "last_test": 1793296757
-  },
-  "vless://ea277838-a188-44f1-a2e8-94aa110c4f27@185.178.208.140:443?type=xhttp&security=tls&encryption=none&path=%2Fapi%2Fv2%2Fevents&host=static.bakarova-top.ru&sni=static.bakarova-top.ru&headerType=none&mode=packet-up&fp=edge": {
-    "success_count": 0,
-    "fail_count": 2,
-    "first_seen": 1793265437,
-    "name": "\ud83c\uddf5\ud83c\uddf1 Poland | [*CIDR]",
-    "last_test": 1793296757
-  },
-  "vless://4c346148-ece9-487a-bffb-ba5a399b2d71@188.225.83.133:443?encryption=none&fp=chrome&mode=gun&pbk=JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw&security=reality&sid=a1b2c3d4e5f6a7b8&type=grpc": {
-    "success_count": 0,
-    "fail_count": 2,
-    "first_seen": 1793265437,
-    "name": "\ud83c\uddea\ud83c\uddea\u041e\u0431\u0445\u043e\u0434\u044b - TG: AirLinkVPNBot |0073|",
-    "last_test": 1793296757
-  },
-  "vless://9b560e60-0e08-4ee7-af43-1cb0f02e6cef@185.86.145.142:2096?type=xhttp&security=tls&sni=apis.heoleti.pro&path=%2Fchxh&host=apis.heoleti.pro&mode=auto&fp=qq": {
-    "success_count": 0,
-    "fail_count": 2,
-    "first_seen": 1793265437,
-    "name": "\ud83c\uddf3\ud83c\uddf1 The Netherlands | [*CIDR] VK",
-    "last_test": 1793296757
-  },
-  "vless://05c66efe-4f1e-4df9-99e6-2b1b624fa7ae@193.233.49.7:443?encryption=none&security=tls&sni=sg.jinggai.online&alpn=http%2F1.1&type=ws&path=%2Fconnect%2F01&host=sg.jinggai.online&fp=safari": {
-    "success_count": 0,
-    "fail_count": 2,
-    "first_seen": 1793265437,
-    "name": "\ud83c\udde8\ud83c\udde6 Canada | \ud83c\udf10 | [*CIDR]",
-    "last_test": 1793296757
-  },
-  "vless://c6628db6-025d-40e8-b79d-033f4372a6b7@189.74.114.93:443?encryption=none&security=tls&serviceName=3e99d50d5740985d&sni=api.mediaklenov.cc&type=grpc&fp=chrome": {
-    "success_count": 0,
-    "fail_count": 2,
-    "first_seen": 1793265437,
-    "name": "\ud83c\uddf3\ud83c\uddf1 The Netherlands | [*CIDR]",
-    "last_test": 1793296757
-  },
-  "vless://9b560e60-0e08-4ee7-af43-1cb0f02e6cef@apis.heoleti.pro:2096?security=tls&sni=apis.heoleti.pro&type=xhttp&host=apis.heoleti.pro&path=%2Fchxh&fp=ios": {
-    "success_count": 0,
-    "fail_count": 2,
-    "first_seen": 1793265437,
-    "name": "\ud83c\uddf3\ud83c\uddf1 The Netherlands | [*CIDR] VK",
-    "last_test": 1793296757
-  },
   "vless://34ec30ca-c499-46c5-a0b9-20638e5197e9@185.86.145.37:443?type=ws&security=tls&encryption=none&path=%2Famws&host=pulse-resume.pro&sni=pulse-resume.pro&headerType=none&fp=safari": {
     "success_count": 1,
     "fail_count": 2,
@@ -535,20 +331,6 @@
     "last_speed": 1.0,
     "last_lat": 100,
     "last_test": 1793313611
-  },
-  "vless://05c66efe-4f1e-4df9-99e6-2b1b624fa7ae@193.233.49.7:443?encryption=none&security=tls&sni=sg.jinggai.online&alpn=http%2F1.1&type=ws&path=%2Fconnect%2F01&host=sg.jinggai.online&fp=chrome": {
-    "success_count": 0,
-    "fail_count": 2,
-    "first_seen": 1793265437,
-    "name": "\ud83c\udde8\ud83c\udde6 Canada | \ud83c\udf10 [*CIDR]",
-    "last_test": 1793296757
-  },
-  "vless://34ec30ca-c499-46c5-a0b9-20638e5197e9@185.86.145.37:443?type=ws&security=tls&encryption=none&path=%2Famws&host=pulse-resume.pro&sni=pulse-resume.pro&headerType=none&fp=android": {
-    "success_count": 0,
-    "fail_count": 2,
-    "first_seen": 1793265437,
-    "name": "\ud83c\uddf3\ud83c\uddf1 The Netherlands | [*CIDR] VK",
-    "last_test": 1793296757
   },
   "vless://a72b971f-2163-48d4-b3a3-6173cee58586@185.86.145.183:443?alpn=http%2F1.1&encryption=none&fp=edge&host=formatno.com&path=%2Fnl7ws&security=tls&sni=formatno.com&type=ws": {
     "success_count": 0,
@@ -4035,12 +3817,12 @@
   },
   "vless://7955bf18-35c4-412d-aabd-c0b36c793063@91.185.83.44:443?security=tls&sni=nguyxejonb.rucdncomp.pro&fp=firefox&type=ws&path=%2Fservice%2Ftelemetry%2F0294da469190%2F&host=nguyxejonb.rucdncomp.pro": {
     "success_count": 5,
-    "fail_count": 1,
+    "fail_count": 2,
     "first_seen": 1793569173,
     "name": "\ud83c\uddf3\ud83c\uddf1 The Netherlands [*CIDR]",
     "last_speed": 1.0,
     "last_lat": 100,
-    "last_test": 1793873881
+    "last_test": 1793906850
   },
   "vless://aba9cdd4-026c-0001-87a9-9b3e5f24dd82@87.242.119.253:443?security=tls&type=tcp&sni=hvtlr-ru-47sb.fade.mom&host=hvtlr-ru-47sb.fade.mom&alpn=%255Bhttp%2525252F1.1%2525252Ch2%255D": {
     "success_count": 0,
@@ -4160,10 +3942,10 @@
   },
   "vless://7ad63b26-bf70-4872-8fab-ebaf73a1e19d@5.129.202.80:443/?type=tcp&encryption=none&flow=xtls-rprx-vision&sni=mirror-50.topp-con.xyz&fp=chrome&security=reality&pbk=NY2bvH4IFKTstWkBWwyU5MmlzuKk0nU08cBoHlti2S8&sid=2ef2b10d5143d798": {
     "success_count": 5,
-    "fail_count": 0,
+    "fail_count": 1,
     "first_seen": 1793615384,
     "name": "\ud83c\uddea\ud83c\uddea Estonia [*CIDR]",
-    "last_test": 1793873881,
+    "last_test": 1793906850,
     "last_speed": 1.0,
     "last_lat": 99
   },
@@ -4446,10 +4228,10 @@
   },
   "vless://7ad63b26-bf70-4872-8fab-ebaf73a1e19d@147.45.245.17:443?flow=xtls-rprx-vision&pbk=4GpOXPkTdvuF1mgBH6n9AFYRvGEh7K2ETgE8asmNASY&security=reality&sid=38146bd64aece7a5&sni=defs-64.topp-con.xyz&fp=chrome": {
     "success_count": 4,
-    "fail_count": 0,
+    "fail_count": 1,
     "first_seen": 1793615384,
     "name": ".\ud81a\udd54 \u0741 \u02d6\u05b4\ud83d\udef8\u0f04\u02d6\u00b0. | [*CIDR]",
-    "last_test": 1793873881,
+    "last_test": 1793906850,
     "last_speed": 1.0,
     "last_lat": 100
   },
@@ -4540,10 +4322,10 @@
   },
   "vless://7ad63b26-bf70-4872-8fab-ebaf73a1e19d@147.45.245.17:443?flow=xtls-rprx-vision&pbk=4GpOXPkTdvuF1mgBH6n9AFYRvGEh7K2ETgE8asmNASY&security=reality&sid=38146bd64aece7a5&sni=defs-64.topp-con.xyz&fp=safari": {
     "success_count": 3,
-    "fail_count": 1,
+    "fail_count": 2,
     "first_seen": 1793615384,
     "name": "\ud83c\uddea\ud83c\uddea Estonia [*CIDR]",
-    "last_test": 1793873881,
+    "last_test": 1793906850,
     "last_speed": 1.0,
     "last_lat": 99
   },
@@ -4911,10 +4693,10 @@
   },
   "vless://7ad63b26-bf70-4872-8fab-ebaf73a1e19d@5.129.202.80:443/?encryption=none&flow=xtls-rprx-vision&pbk=NY2bvH4IFKTstWkBWwyU5MmlzuKk0nU08cBoHlti2S8&security=reality&sid=2ef2b10d5143d798&sni=mirror-50.topp-con.xyz&type=tcp&fp=ios": {
     "success_count": 5,
-    "fail_count": 0,
+    "fail_count": 1,
     "first_seen": 1793615384,
     "name": "\ud83c\uddea\ud83c\uddea Estonia [*CIDR]",
-    "last_test": 1793873881,
+    "last_test": 1793906850,
     "last_speed": 1.0,
     "last_lat": 100
   },
@@ -6117,10 +5899,10 @@
   },
   "vless://c720cb74-4c84-4fce-b8ae-637dbaa16199@91.185.83.44:443?security=tls&type=ws&sni=nguyxejonb.rucdncomp.pro&path=%2Fservice%2Ftelemetry%2F0294da469190%2F&host=nguyxejonb.rucdncomp.pro&fp=firefox": {
     "success_count": 1,
-    "fail_count": 1,
+    "fail_count": 2,
     "first_seen": 1793787894,
     "name": "\ud83c\uddf3\ud83c\uddf1 The Netherlands [*CIDR]",
-    "last_test": 1793873881,
+    "last_test": 1793906850,
     "last_speed": 1.0,
     "last_lat": 99
   },
@@ -6210,10 +5992,10 @@
   },
   "vless://c720cb74-4c84-4fce-b8ae-637dbaa16199@91.185.83.44:443?security=tls&sni=nguyxejonb.rucdncomp.pro&alpn=http/1.1&fp=firefox&type=ws&path=/service/telemetry/0294da469190/&host=nguyxejonb.rucdncomp.pro": {
     "success_count": 1,
-    "fail_count": 1,
+    "fail_count": 2,
     "first_seen": 1793787894,
     "name": "\ud83c\uddf3\ud83c\uddf1 The Netherlands [*CIDR]",
-    "last_test": 1793873881,
+    "last_test": 1793906850,
     "last_speed": 1.0,
     "last_lat": 99
   },
@@ -6226,10 +6008,10 @@
   },
   "vless://7955bf18-35c4-412d-aabd-c0b36c793063@91.185.83.44:443?encryption=none&fp=firefox&host=nguyxejonb.rucdncomp.pro&path=/service/telemetry/0294da469190/&security=tls&sni=nguyxejonb.rucdncomp.pro&type=ws": {
     "success_count": 1,
-    "fail_count": 1,
+    "fail_count": 2,
     "first_seen": 1793787894,
     "name": "\ud83c\uddf3\ud83c\uddf1 The Netherlands [*CIDR]",
-    "last_test": 1793873881,
+    "last_test": 1793906850,
     "last_speed": 1.0,
     "last_lat": 100
   },
@@ -6599,337 +6381,430 @@
   },
   "vless://c720cb74-4c84-4fce-b8ae-637dbaa16199@185.178.208.140:443?alpn=http%2F1.1&encryption=none&host=gran-game.pro&path=%2Fstatic%2Fevents%2F900598fa7500%2F&security=tls&sni=gran-game.pro&type=ws&fp=firefox": {
     "success_count": 1,
-    "fail_count": 1,
+    "fail_count": 2,
     "first_seen": 1793819905,
     "name": ".\ud81a\udd54 \u0741 \u02d6\u05b4\ud83d\udef8\u0f04\u02d6\u00b0. | [*CIDR]",
     "last_speed": 1.0,
     "last_lat": 99,
-    "last_test": 1793873881
+    "last_test": 1793906850
   },
   "vless://9a0e84f8-4b58-477f-99da-5fac5a2e58e8@3f8efdt.fi1.h1clayd.click:443?encryption=none&security=reality&sni=3f8efdt.fi1.h1clayd.click&pbk=1D_o1pqfVoReg9zLPKNy1wCL7aGWytbmbYPbbJGaozY&sid=023a1e6ffc32be10&type=tcp&headerType=none&insecure=0&fp=chrome": {
     "success_count": 1,
-    "fail_count": 1,
+    "fail_count": 2,
     "first_seen": 1793819905,
     "name": "\ud83c\uddfa\ud83c\uddf8 United States | [*CIDR]",
     "last_speed": 1.0,
     "last_lat": 99,
-    "last_test": 1793873881
+    "last_test": 1793906850
   },
   "vless://9a0e84f8-4b58-477f-99da-5fac5a2e58e8@3f8efdt.fi1.h1clayd.click:443?encryption=none&security=reality&sni=3f8efdt.fi1.h1clayd.click&pbk=1D_o1pqfVoReg9zLPKNy1wCL7aGWytbmbYPbbJGaozY&sid=023a1e6ffc32be10&type=tcp&headerType=none&insecure=0&fp=firefox": {
     "success_count": 1,
-    "fail_count": 1,
+    "fail_count": 2,
     "first_seen": 1793819905,
     "name": "\ud83c\uddfa\ud83c\uddf8 United States | [*CIDR]",
     "last_speed": 1.0,
     "last_lat": 100,
-    "last_test": 1793873881
+    "last_test": 1793906850
   },
   "vless://9a0e84f8-4b58-477f-99da-5fac5a2e58e8@3f8efdt.fi1.h1clayd.click:443?security=reality&pbk=1D_o1pqfVoReg9zLPKNy1wCL7aGWytbmbYPbbJGaozY&sid=023a1e6ffc32be10&sni=3f8efdt.fi1.h1clayd.click&type=tcp&headerType=none&host=3f8efdt.fi1.h1clayd.click&path=%2F&fp=ios": {
     "success_count": 1,
-    "fail_count": 1,
+    "fail_count": 2,
     "first_seen": 1793819905,
     "name": "\ud83c\uddfa\ud83c\uddf8 United States | [*CIDR]",
     "last_speed": 1.0,
     "last_lat": 99,
-    "last_test": 1793873881
+    "last_test": 1793906850
   },
   "vless://ea277838-a188-44f1-a2e8-94aa110c4f27@185.178.208.140:443?type=xhttp&security=tls&encryption=none&path=%2Fapi%2Fv2%2Fevents&sni=api.bakarova-top.ru&headerType=none&fp=safari": {
     "success_count": 0,
-    "fail_count": 1,
+    "fail_count": 2,
     "first_seen": 1793873881,
     "name": "\ud83c\uddf5\ud83c\uddf1 Poland | [*CIDR]",
-    "last_test": 1793873881
+    "last_test": 1793906850
   },
   "vless://2232d904-8e6a-4202-8240-6efd8aec02e9@lorettmay.top:443?security=tls&type=ws&sni=lorettmay.top&path=%2Fblog%2Fposts&alpn=http%25252525252F1.1&fp=qq": {
     "success_count": 0,
-    "fail_count": 1,
+    "fail_count": 2,
     "first_seen": 1793873881,
-    "name": "\ud83c\uddf1\ud83c\uddf9 Lithuania | [*CIDR]",
-    "last_test": 1793873881
+    "name": "\ud83c\uddf1\ud83c\uddf9 Lithuania [*CIDR]",
+    "last_test": 1793906850
   },
   "vless://7bd7c4aa-52c4-482c-bdcc-e7380fa6b5fe@193.233.89.130:443?encryption=none&flow=xtls-rprx-vision&pbk=xx8KWdR4HbVmvqPb0wRPAstBHGN2Uk99m7AF794_E3c&security=reality&sni=instance-100.prismix.cc&type=tcp&fp=ios": {
     "success_count": 0,
-    "fail_count": 1,
+    "fail_count": 2,
     "first_seen": 1793873881,
     "name": "\ud83c\uddf1\ud83c\uddfb Latvia [*CIDR]",
-    "last_test": 1793873881
+    "last_test": 1793906850
   },
   "vless://7bd7c4aa-52c4-482c-bdcc-e7380fa6b5fe@193.233.89.130:443?encryption=none&flow=xtls-rprx-vision&pbk=xx8KWdR4HbVmvqPb0wRPAstBHGN2Uk99m7AF794_E3c&security=reality&sni=g.play2go.gay&type=tcp&fp=firefox": {
     "success_count": 0,
-    "fail_count": 1,
+    "fail_count": 2,
     "first_seen": 1793873881,
     "name": "\ud83c\udde8\ud83c\udded Switzerland | \ud83c\udf10 | [*CIDR]",
-    "last_test": 1793873881
+    "last_test": 1793906850
   },
   "vless://7bd7c4aa-52c4-482c-bdcc-e7380fa6b5fe@193.233.89.130:443?encryption=none&flow=xtls-rprx-vision&pbk=xx8KWdR4HbVmvqPb0wRPAstBHGN2Uk99m7AF794_E3c&security=reality&sni=instance-100.prismix.cc&type=tcp&fp=firefox": {
     "success_count": 0,
-    "fail_count": 1,
+    "fail_count": 2,
     "first_seen": 1793873881,
     "name": "\ud83c\uddf1\ud83c\uddfb Latvia | [*CIDR]",
-    "last_test": 1793873881
+    "last_test": 1793906850
   },
   "vless://7bd7c4aa-52c4-482c-bdcc-e7380fa6b5fe@193.233.89.130:8443?encryption=none&pbk=xx8KWdR4HbVmvqPb0wRPAstBHGN2Uk99m7AF794_E3c&security=reality&serviceName=grpc&sni=instance-100.prismix.cc&type=grpc&fp=ios": {
     "success_count": 0,
-    "fail_count": 1,
+    "fail_count": 2,
     "first_seen": 1793873881,
     "name": "\ud83c\uddf1\ud83c\uddfb Latvia [*CIDR]",
-    "last_test": 1793873881
+    "last_test": 1793906850
   },
   "vless://7dd69047-047e-422e-a2ba-ed773c34fd1a@37.18.14.43:8443?alpn=http%2F1.1%2Ch2&encryption=none&headerType=none&host=flatcrest.net&mode=auto&path=%2Fapi%2Fv1%2Fupload&security=tls&sni=flatcrest.net&type=xhttp&fp=safari": {
     "success_count": 0,
-    "fail_count": 1,
+    "fail_count": 2,
     "first_seen": 1793873881,
     "name": "\ud83c\udde7\ud83c\uddec Bulgaria | \ud83c\udf10 [*CIDR] CDN",
-    "last_test": 1793873881
+    "last_test": 1793906850
   },
   "vless://ea277838-a188-44f1-a2e8-94aa110c4f27@185.178.208.140:443?type=xhttp&security=tls&encryption=none&path=%2Fapi%2Fv2%2Fevents&host=api.bakarova-top.ru&sni=api.bakarova-top.ru&alpn=h2&headerType=none&mode=packet-up&fp=chrome": {
     "success_count": 0,
-    "fail_count": 1,
+    "fail_count": 2,
     "first_seen": 1793873881,
-    "name": ".\ud81a\udd54 \u0741 \u02d6\u05b4\ud83d\udef8\u0f04\u02d6\u00b0. | [*CIDR]",
-    "last_test": 1793873881
+    "name": "\ud83c\uddf5\ud83c\uddf1 Poland | [*CIDR]",
+    "last_test": 1793906850
   },
   "vless://7bd7c4aa-52c4-482c-bdcc-e7380fa6b5fe@193.233.89.130:443?encryption=none&flow=xtls-rprx-vision&pbk=xx8KWdR4HbVmvqPb0wRPAstBHGN2Uk99m7AF794_E3c&security=reality&sni=g.play2go.gay&type=tcp&fp=chrome": {
     "success_count": 0,
-    "fail_count": 1,
+    "fail_count": 2,
     "first_seen": 1793873881,
     "name": "\ud83c\udde8\ud83c\udded Switzerland | \ud83c\udf10 [*CIDR]",
-    "last_test": 1793873881
+    "last_test": 1793906850
   },
   "vless://7dd69047-047e-422e-a2ba-ed773c34fd1a@37.18.14.43:8443?type=xhttp&security=tls&path=%2Fapi%2Fv1%2Fupload&sni=flatcrest.net&fp=edge": {
     "success_count": 0,
-    "fail_count": 1,
+    "fail_count": 2,
     "first_seen": 1793873881,
     "name": "\ud83c\udde7\ud83c\uddec Bulgaria | \ud83c\udf10 [*CIDR] CDN",
-    "last_test": 1793873881
+    "last_test": 1793906850
   },
   "vless://2f6c70f3-206a-4bc1-ac1f-6b70153f9c73@186.246.10.239:2880?encryption=none&flow=xtls-rprx-vision&pbk=CQBmePak1QN5SsSmK_KTOSLjsCTaiaM4Jtxt7jLheko&security=reality&sid=b0d8c9a285c70f6f&sni=unpkg.com&type=tcp&fp=safari": {
     "success_count": 0,
-    "fail_count": 1,
+    "fail_count": 2,
     "first_seen": 1793873881,
     "name": "\ud83c\uddea\ud83c\uddea Estonia | [*CIDR]",
-    "last_test": 1793873881
+    "last_test": 1793906850
   },
   "vless://7dd69047-047e-422e-a2ba-ed773c34fd1a@37.18.14.43:8443?type=xhttp&security=tls&encryption=none&path=%2Fapi%2Fv1%2Fupload&host=flatcrest.net&sni=flatcrest.net&headerType=none&mode=auto&fp=qq": {
     "success_count": 0,
-    "fail_count": 1,
+    "fail_count": 2,
     "first_seen": 1793873881,
     "name": "\ud83c\udde7\ud83c\uddec Bulgaria | \ud83c\udf10 [*CIDR] CDN",
-    "last_test": 1793873881
+    "last_test": 1793906850
   },
   "vless://7bd7c4aa-52c4-482c-bdcc-e7380fa6b5fe@193.233.89.130:8443?encryption=none&pbk=xx8KWdR4HbVmvqPb0wRPAstBHGN2Uk99m7AF794_E3c&security=reality&serviceName=grpc&sni=g.play2go.gay&type=grpc&fp=chrome": {
     "success_count": 0,
-    "fail_count": 1,
+    "fail_count": 2,
     "first_seen": 1793873881,
     "name": "\ud83c\udde8\ud83c\udded Switzerland | \ud83c\udf10 [*CIDR]",
-    "last_test": 1793873881
+    "last_test": 1793906850
   },
   "vless://ea277838-a188-44f1-a2e8-94aa110c4f27@185.178.208.140:443?alpn=h2&encryption=none&extra=null&host=static.bakarova-top.ru&path=%2Fapi%2Fv2%2Fevents&security=tls&sni=static.bakarova-top.ru&type=xhttp&fp=edge": {
     "success_count": 0,
-    "fail_count": 1,
+    "fail_count": 2,
     "first_seen": 1793873881,
     "name": "\ud83c\uddf5\ud83c\uddf1 Poland | [*CIDR]",
-    "last_test": 1793873881
+    "last_test": 1793906850
   },
   "vless://2232d904-8e6a-4202-8240-6efd8aec02e9@lorettmay.top:443?security=tls&type=ws&sni=lorettmay.top&path=%2Fblog%2Fposts&alpn=http%252525252F1.1&fp=firefox": {
     "success_count": 0,
-    "fail_count": 1,
+    "fail_count": 2,
     "first_seen": 1793873881,
     "name": "\ud83c\uddf1\ud83c\uddf9 Lithuania [*CIDR]",
-    "last_test": 1793873881
+    "last_test": 1793906850
   },
   "vless://7dd69047-047e-422e-a2ba-ed773c34fd1a@37.18.14.43:8443?type=xhttp&security=tls&path=%2Fapi%2Fv1%2Fupload&sni=flatcrest.net&fp=qq": {
     "success_count": 0,
-    "fail_count": 1,
+    "fail_count": 2,
     "first_seen": 1793873881,
     "name": "\ud83c\udde7\ud83c\uddec Bulgaria | \ud83c\udf10 [*CIDR] CDN",
-    "last_test": 1793873881
+    "last_test": 1793906850
   },
   "vless://7bd7c4aa-52c4-482c-bdcc-e7380fa6b5fe@193.233.89.130:443?encryption=none&flow=xtls-rprx-vision&pbk=xx8KWdR4HbVmvqPb0wRPAstBHGN2Uk99m7AF794_E3c&security=reality&sni=g.play2go.gay&type=tcp&fp=ios": {
     "success_count": 0,
-    "fail_count": 1,
+    "fail_count": 2,
     "first_seen": 1793873881,
     "name": "\ud83c\udde8\ud83c\udded Switzerland | \ud83c\udf10 [*CIDR]",
-    "last_test": 1793873881
+    "last_test": 1793906850
   },
   "vless://7bd7c4aa-52c4-482c-bdcc-e7380fa6b5fe@193.233.89.130:8443?encryption=none&pbk=xx8KWdR4HbVmvqPb0wRPAstBHGN2Uk99m7AF794_E3c&security=reality&serviceName=grpc&sni=g.play2go.gay&type=grpc&fp=firefox": {
     "success_count": 0,
-    "fail_count": 1,
+    "fail_count": 2,
     "first_seen": 1793873881,
     "name": "\ud83c\udde8\ud83c\udded Switzerland | \ud83c\udf10 | [*CIDR]",
-    "last_test": 1793873881
+    "last_test": 1793906850
   },
   "vless://2232d904-8e6a-4202-8240-6efd8aec02e9@lorettmay.top:443?security=tls&type=ws&sni=lorettmay.top&path=%2Fblog%2Fposts&alpn=http%25252525252F1.1&fp=chrome": {
     "success_count": 0,
-    "fail_count": 1,
+    "fail_count": 2,
     "first_seen": 1793873881,
-    "name": "\ud83c\uddf1\ud83c\uddf9 Lithuania | [*CIDR]",
-    "last_test": 1793873881
+    "name": "\ud83c\uddf1\ud83c\uddf9 Lithuania [*CIDR]",
+    "last_test": 1793906850
   },
   "vless://7ad63b26-bf70-4872-8fab-ebaf73a1e19d@147.45.161.4:443?security=reality&flow=xtls-rprx-vision&pbk=xTePrM5IyjR8o52B2mRAO2nNivfyMpBZxya93MQk4Qc&sid=2a40b6d6495debf3&sni=defs-68.topp-con.xyz&type=tcp&headerType=none&host=defs-68.topp-con.xyz&path=%2F&fp=random": {
     "success_count": 0,
-    "fail_count": 1,
+    "fail_count": 2,
     "first_seen": 1793873881,
     "name": ".\ud81a\udd54 \u0741 \u02d6\u05b4\ud83d\udef8\u0f04\u02d6\u00b0. | [*CIDR]",
-    "last_test": 1793873881
+    "last_test": 1793906850
   },
   "vless://ea277838-a188-44f1-a2e8-94aa110c4f27@185.178.208.140:443?type=xhttp&security=tls&encryption=none&path=%2Fapi%2Fv2%2Fevents&host=api.bakarova-top.ru&sni=api.bakarova-top.ru&alpn=h2&headerType=none&mode=packet-up&fp=firefox": {
     "success_count": 0,
-    "fail_count": 1,
+    "fail_count": 2,
     "first_seen": 1793873881,
-    "name": ".\ud81a\udd54 \u0741 \u02d6\u05b4\ud83d\udef8\u0f04\u02d6\u00b0. | [*CIDR]",
-    "last_test": 1793873881
+    "name": "\ud83c\uddf5\ud83c\uddf1 Poland | [*CIDR]",
+    "last_test": 1793906850
   },
   "vless://7bd7c4aa-52c4-482c-bdcc-e7380fa6b5fe@193.233.89.130:8443?encryption=none&pbk=xx8KWdR4HbVmvqPb0wRPAstBHGN2Uk99m7AF794_E3c&security=reality&serviceName=grpc&sni=g.play2go.gay&type=grpc&fp=safari": {
     "success_count": 0,
-    "fail_count": 1,
+    "fail_count": 2,
     "first_seen": 1793873881,
     "name": "\ud83c\udde8\ud83c\udded Switzerland | \ud83c\udf10 [*CIDR]",
-    "last_test": 1793873881
+    "last_test": 1793906850
   },
   "vless://7bd7c4aa-52c4-482c-bdcc-e7380fa6b5fe@193.233.89.130:443?encryption=none&flow=xtls-rprx-vision&pbk=xx8KWdR4HbVmvqPb0wRPAstBHGN2Uk99m7AF794_E3c&security=reality&sni=g.play2go.gay&type=tcp&fp=safari": {
     "success_count": 0,
-    "fail_count": 1,
+    "fail_count": 2,
     "first_seen": 1793873881,
     "name": "\ud83c\udde8\ud83c\udded Switzerland | \ud83c\udf10 [*CIDR]",
-    "last_test": 1793873881
+    "last_test": 1793906850
   },
   "vless://2232d904-8e6a-4202-8240-6efd8aec02e9@lorettmay.top:443?security=tls&type=ws&sni=lorettmay.top&path=%2Fblog%2Fposts&alpn=http%2525252F1.1&fp=qq": {
     "success_count": 0,
-    "fail_count": 1,
+    "fail_count": 2,
     "first_seen": 1793873881,
     "name": "\ud83c\uddf1\ud83c\uddf9 Lithuania [*CIDR]",
-    "last_test": 1793873881
+    "last_test": 1793906850
   },
   "vless://7bd7c4aa-52c4-482c-bdcc-e7380fa6b5fe@193.233.89.130:443?encryption=none&flow=xtls-rprx-vision&pbk=xx8KWdR4HbVmvqPb0wRPAstBHGN2Uk99m7AF794_E3c&security=reality&sni=instance-100.prismix.cc&type=tcp&fp=chrome": {
     "success_count": 0,
-    "fail_count": 1,
+    "fail_count": 2,
     "first_seen": 1793873881,
     "name": "\ud83c\uddf1\ud83c\uddfb Latvia [*CIDR]",
-    "last_test": 1793873881
+    "last_test": 1793906850
   },
   "vless://7bd7c4aa-52c4-482c-bdcc-e7380fa6b5fe@193.233.89.130:8443?encryption=none&pbk=xx8KWdR4HbVmvqPb0wRPAstBHGN2Uk99m7AF794_E3c&security=reality&serviceName=grpc&sni=instance-100.prismix.cc&type=grpc&fp=safari": {
     "success_count": 0,
-    "fail_count": 1,
+    "fail_count": 2,
     "first_seen": 1793873881,
     "name": "\ud83c\uddf1\ud83c\uddfb Latvia [*CIDR]",
-    "last_test": 1793873881
+    "last_test": 1793906850
   },
   "vless://7bd7c4aa-52c4-482c-bdcc-e7380fa6b5fe@193.233.89.130:8443?encryption=none&pbk=xx8KWdR4HbVmvqPb0wRPAstBHGN2Uk99m7AF794_E3c&security=reality&serviceName=grpc&sni=g.play2go.gay&type=grpc&fp=ios": {
     "success_count": 0,
-    "fail_count": 1,
+    "fail_count": 2,
     "first_seen": 1793873881,
     "name": "\ud83c\udde8\ud83c\udded Switzerland | \ud83c\udf10 [*CIDR]",
-    "last_test": 1793873881
+    "last_test": 1793906850
   },
   "vless://7bd7c4aa-52c4-482c-bdcc-e7380fa6b5fe@193.233.89.130:8443?encryption=none&pbk=xx8KWdR4HbVmvqPb0wRPAstBHGN2Uk99m7AF794_E3c&security=reality&serviceName=grpc&sni=instance-100.prismix.cc&type=grpc&fp=chrome": {
     "success_count": 0,
-    "fail_count": 1,
+    "fail_count": 2,
     "first_seen": 1793873881,
     "name": "\ud83c\uddf1\ud83c\uddfb Latvia [*CIDR]",
-    "last_test": 1793873881
+    "last_test": 1793906850
   },
   "vless://7ad63b26-bf70-4872-8fab-ebaf73a1e19d@147.45.161.4:443?security=reality&flow=xtls-rprx-vision&pbk=xTePrM5IyjR8o52B2mRAO2nNivfyMpBZxya93MQk4Qc&sid=2a40b6d6495debf3&sni=defs-68.topp-con.xyz&type=tcp&headerType=none&host=defs-68.topp-con.xyz&path=%2F&fp=firefox": {
     "success_count": 0,
-    "fail_count": 1,
+    "fail_count": 2,
     "first_seen": 1793873881,
     "name": ".\ud81a\udd54 \u0741 \u02d6\u05b4\ud83d\udef8\u0f04\u02d6\u00b0. | [*CIDR]",
-    "last_test": 1793873881
+    "last_test": 1793906850
   },
   "vless://7bd7c4aa-52c4-482c-bdcc-e7380fa6b5fe@193.233.89.130:8443?encryption=none&pbk=xx8KWdR4HbVmvqPb0wRPAstBHGN2Uk99m7AF794_E3c&security=reality&serviceName=grpc&sni=g.play2go.gay&type=grpc&fp=edge": {
     "success_count": 0,
-    "fail_count": 1,
+    "fail_count": 2,
     "first_seen": 1793873881,
     "name": "\ud83c\udde8\ud83c\udded Switzerland | \ud83c\udf10 | [*CIDR]",
-    "last_test": 1793873881
+    "last_test": 1793906850
   },
   "vless://7dd69047-047e-422e-a2ba-ed773c34fd1a@37.18.14.43:8443?alpn=http%2F1.1%2Ch2&encryption=none&headerType=none&host=flatcrest.net&mode=auto&path=%2Fapi%2Fv1%2Fupload&security=tls&sni=flatcrest.net&type=xhttp&fp=firefox": {
     "success_count": 0,
-    "fail_count": 1,
+    "fail_count": 2,
     "first_seen": 1793873881,
     "name": "\ud83c\udde7\ud83c\uddec Bulgaria [*CIDR] CDN",
-    "last_test": 1793873881
+    "last_test": 1793906850
   },
   "vless://7bd7c4aa-52c4-482c-bdcc-e7380fa6b5fe@193.233.89.130:8443?encryption=none&pbk=xx8KWdR4HbVmvqPb0wRPAstBHGN2Uk99m7AF794_E3c&security=reality&serviceName=grpc&sni=instance-100.prismix.cc&type=grpc&fp=firefox": {
     "success_count": 0,
-    "fail_count": 1,
+    "fail_count": 2,
     "first_seen": 1793873881,
     "name": "\ud83c\uddf1\ud83c\uddfb Latvia | [*CIDR]",
-    "last_test": 1793873881
+    "last_test": 1793906850
   },
   "vless://7bd7c4aa-52c4-482c-bdcc-e7380fa6b5fe@193.233.89.130:8443?encryption=none&pbk=xx8KWdR4HbVmvqPb0wRPAstBHGN2Uk99m7AF794_E3c&security=reality&serviceName=grpc&sni=instance-100.prismix.cc&type=grpc&fp=edge": {
     "success_count": 0,
-    "fail_count": 1,
+    "fail_count": 2,
     "first_seen": 1793873881,
     "name": "\ud83c\uddf1\ud83c\uddfb Latvia | [*CIDR]",
-    "last_test": 1793873881
+    "last_test": 1793906850
   },
   "vless://7dd69047-047e-422e-a2ba-ed773c34fd1a@37.18.14.43:8443?type=xhttp&security=tls&path=%2Fapi%2Fv1%2Fupload&sni=flatcrest.net&fp=firefox": {
     "success_count": 0,
-    "fail_count": 1,
+    "fail_count": 2,
     "first_seen": 1793873881,
     "name": "\ud83c\udde7\ud83c\uddec Bulgaria | \ud83c\udf10 [*CIDR] CDN",
-    "last_test": 1793873881
+    "last_test": 1793906850
   },
   "vless://7bd7c4aa-52c4-482c-bdcc-e7380fa6b5fe@193.233.89.130:443?encryption=none&flow=xtls-rprx-vision&pbk=xx8KWdR4HbVmvqPb0wRPAstBHGN2Uk99m7AF794_E3c&security=reality&sni=instance-100.prismix.cc&type=tcp&fp=safari": {
     "success_count": 0,
-    "fail_count": 1,
+    "fail_count": 2,
     "first_seen": 1793873881,
     "name": "\ud83c\uddf1\ud83c\uddfb Latvia [*CIDR]",
-    "last_test": 1793873881
+    "last_test": 1793906850
   },
   "vless://2f6c70f3-206a-4bc1-ac1f-6b70153f9c73@connect2.accessgate.link:2086?flow=xtls-rprx-vision&pbk=CQBmePak1QN5SsSmK_KTOSLjsCTaiaM4Jtxt7jLheko&security=reality&sid=b0d8c9a285c70f6f&sni=unpkg.com&type=tcp&fp=edge": {
     "success_count": 1,
-    "fail_count": 0,
+    "fail_count": 1,
     "first_seen": 1793873881,
     "name": "\ud83c\uddf3\ud83c\uddf4 Norway | [*CIDR]",
     "last_speed": 1.0,
     "last_lat": 99,
-    "last_test": 1793873881
+    "last_test": 1793906850
   },
   "vless://2f6c70f3-206a-4bc1-ac1f-6b70153f9c73@connect2.accessgate.link:2086?flow=xtls-rprx-vision&pbk=CQBmePak1QN5SsSmK_KTOSLjsCTaiaM4Jtxt7jLheko&security=reality&sid=b0d8c9a285c70f6f&sni=unpkg.com&type=tcp&fp=firefox": {
     "success_count": 1,
-    "fail_count": 0,
+    "fail_count": 1,
     "first_seen": 1793873881,
     "name": "\ud83c\uddf3\ud83c\uddf4 Norway [*CIDR]",
     "last_speed": 1.0,
     "last_lat": 99,
-    "last_test": 1793873881
+    "last_test": 1793906850
   },
   "vless://2f6c70f3-206a-4bc1-ac1f-6b70153f9c73@connect2.accessgate.link:2086?flow=xtls-rprx-vision&pbk=CQBmePak1QN5SsSmK_KTOSLjsCTaiaM4Jtxt7jLheko&security=reality&sid=b0d8c9a285c70f6f&sni=unpkg.com&type=tcp&fp=safari": {
     "success_count": 1,
-    "fail_count": 0,
+    "fail_count": 1,
     "first_seen": 1793873881,
     "name": "\ud83c\uddf3\ud83c\uddf4 Norway [*CIDR]",
     "last_speed": 1.0,
     "last_lat": 99,
-    "last_test": 1793873881
+    "last_test": 1793906850
   },
   "vless://2f6c70f3-206a-4bc1-ac1f-6b70153f9c73@connect2.accessgate.link:2086?flow=xtls-rprx-vision&pbk=CQBmePak1QN5SsSmK_KTOSLjsCTaiaM4Jtxt7jLheko&security=reality&sid=b0d8c9a285c70f6f&sni=unpkg.com&type=tcp&fp=ios": {
     "success_count": 1,
-    "fail_count": 0,
+    "fail_count": 1,
     "first_seen": 1793873881,
     "name": "\ud83c\uddf3\ud83c\uddf4 Norway [*CIDR]",
     "last_speed": 1.0,
     "last_lat": 99,
-    "last_test": 1793873881
+    "last_test": 1793906850
   },
   "vless://2f6c70f3-206a-4bc1-ac1f-6b70153f9c73@186.246.10.239:2880?encryption=none&flow=xtls-rprx-vision&pbk=CQBmePak1QN5SsSmK_KTOSLjsCTaiaM4Jtxt7jLheko&security=reality&sid=b0d8c9a285c70f6f&sni=unpkg.com&type=tcp&fp=firefox": {
     "success_count": 1,
-    "fail_count": 0,
+    "fail_count": 1,
     "first_seen": 1793873881,
     "name": "\ud83c\uddea\ud83c\uddea Estonia | [*CIDR]",
     "last_speed": 1.0,
     "last_lat": 100,
-    "last_test": 1793873881
+    "last_test": 1793906850
   },
   "vless://2f6c70f3-206a-4bc1-ac1f-6b70153f9c73@connect2.accessgate.link:2086?flow=xtls-rprx-vision&pbk=CQBmePak1QN5SsSmK_KTOSLjsCTaiaM4Jtxt7jLheko&security=reality&sid=b0d8c9a285c70f6f&sni=unpkg.com&type=tcp&fp=chrome": {
     "success_count": 1,
-    "fail_count": 0,
+    "fail_count": 1,
     "first_seen": 1793873881,
     "name": "\ud83c\uddf3\ud83c\uddf4 Norway [*CIDR]",
     "last_speed": 1.0,
     "last_lat": 100,
-    "last_test": 1793873881
+    "last_test": 1793906850
+  },
+  "vless://66217279-de40-4b62-b2bb-9c33b8fb7a01@37.18.14.145:7445?encryption=none&flow=xtls-rprx-vision&fp=random&pbk=S_s3FVodJIep88KnIgT0cZLUMB2tAJHTJEn0o-J03G8&security=reality&sid=283f4b51fbe39ad9&sni=passport.yandex.ru&type=raw": {
+    "success_count": 0,
+    "fail_count": 1,
+    "first_seen": 1793906850,
+    "name": "\ud83c\uddfa\ud83c\uddf8\u041e\u0431\u0445\u043e\u0434\u044b - TG: AirLinkVPNBot |0102|",
+    "last_test": 1793906850
+  },
+  "vless://6a2aff19-ff1f-4a13-96c8-a4d8986a9699@78.159.246.179:2053?alpn=http%2F1.1%2Ch2&encryption=none&extra=null&fp=firefox&host=randomquaint.net&mode=auto&path=%2Fapi%2Fv1%2Fupload&security=tls&sni=randomquaint.net&type=xhttp": {
+    "success_count": 0,
+    "fail_count": 1,
+    "first_seen": 1793906850,
+    "name": "\ud83c\uddf7\ud83c\uddfa\u041e\u0431\u0445\u043e\u0434\u044b - TG: AirLinkVPNBot |0023|",
+    "last_test": 1793906850
+  },
+  "vless://2232d904-8e6a-4202-8240-6efd8aec02e9@lorettmay.top:443?security=tls&type=ws&sni=lorettmay.top&path=%2Fblog%2Fposts&alpn=http%25252525252F1.1&fp=safari": {
+    "success_count": 0,
+    "fail_count": 1,
+    "first_seen": 1793906850,
+    "name": "\ud83c\uddf1\ud83c\uddf9 Lithuania [*CIDR]",
+    "last_test": 1793906850
+  },
+  "vless://ea277838-a188-44f1-a2e8-94aa110c4f27@185.178.208.140:443?encryption=none&extra=null&host=api.bakarova-top.ru&mode=packet-up&path=%2Fapi%2Fv2%2Fevents&security=tls&sni=api.bakarova-top.ru&type=xhttp&fp=android": {
+    "success_count": 0,
+    "fail_count": 1,
+    "first_seen": 1793906850,
+    "name": "\ud83c\uddf5\ud83c\uddf1 Poland | [*CIDR]",
+    "last_test": 1793906850
+  },
+  "vless://1fc053ed-e9e8-49f2-b7c1-fde68d722dff@162afct.lt2.h1clayd.click:443?type=raw&security=reality&flow=xtls-rprx-vision&pbk=y_pzv7NPwU8d4gAC3r6f6FZN5vFmaKJK9YPEGOjSYB0&sid=51e7ad7303dba560&sni=162afct.lt2.h1clayd.click&support-x25519mlkem768=true&fp=android": {
+    "success_count": 0,
+    "fail_count": 1,
+    "first_seen": 1793906850,
+    "name": "\ud83c\uddf1\ud83c\uddf9 Lithuania | [*CIDR]",
+    "last_test": 1793906850
+  },
+  "vless://ea277838-a188-44f1-a2e8-94aa110c4f27@185.178.208.140:443?encryption=none&mode=auto&path=%2Fapi%2Fv2%2Fevents&security=tls&sni=static.bakarova-top.ru&type=xhttp&fp=safari": {
+    "success_count": 0,
+    "fail_count": 1,
+    "first_seen": 1793906850,
+    "name": "\ud83c\uddf5\ud83c\uddf1 Poland | [*CIDR]",
+    "last_test": 1793906850
+  },
+  "vless://633f424e-2b11-48da-a6b3-a849dd71456f@45.12.75.242:26424?encryption=none&pbk=l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0&security=reality&sid=23103e1e&sni=ya.ru&type=raw": {
+    "success_count": 0,
+    "fail_count": 1,
+    "first_seen": 1793906850,
+    "name": "\ud83c\uddf7\ud83c\uddfa\u041e\u0431\u0445\u043e\u0434\u044b - TG: AirLinkVPNBot |0028|",
+    "last_test": 1793906850
+  },
+  "vless://633f424e-2b11-48da-a6b3-a849dd71456f@45.12.75.242:26424?encryption=none&fp=qq&pbk=l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0&security=reality&sid=23103e1e&sni=ya.ru&type=raw": {
+    "success_count": 0,
+    "fail_count": 1,
+    "first_seen": 1793906850,
+    "name": "\ud83c\uddf7\ud83c\uddfa\u041e\u0431\u0445\u043e\u0434\u044b - TG: AirLinkVPNBot |0027|",
+    "last_test": 1793906850
+  },
+  "vless://1fc053ed-e9e8-49f2-b7c1-fde68d722dff@162afct.lt2.h1clayd.click:443?type=raw&security=reality&flow=xtls-rprx-vision&pbk=y_pzv7NPwU8d4gAC3r6f6FZN5vFmaKJK9YPEGOjSYB0&sid=51e7ad7303dba560&sni=162afct.lt2.h1clayd.click&support-x25519mlkem768=true&fp=qq": {
+    "success_count": 0,
+    "fail_count": 1,
+    "first_seen": 1793906850,
+    "name": "\ud83c\uddf1\ud83c\uddf9 Lithuania | [*CIDR]",
+    "last_test": 1793906850
+  },
+  "vless://1fc053ed-e9e8-49f2-b7c1-fde68d722dff@5a873ag.lt2.h1clayd.click:443?type=grpc&security=reality&pbk=-7jCGkgrVLVo1DgJrvOT_erdlIRf2IyVu1KGS409eBc&sid=40cdf901244028cb&sni=5a873ag.lt2.h1clayd.click&serviceName=8fcf9a0ebfb7&spx=%2F853ca9ab366a80d&support-x25519mlkem768=true&fp=firefox": {
+    "success_count": 0,
+    "fail_count": 1,
+    "first_seen": 1793906850,
+    "name": "\ud83c\uddf1\ud83c\uddf9 Lithuania | [*CIDR]",
+    "last_test": 1793906850
+  },
+  "vless://1fc053ed-e9e8-49f2-b7c1-fde68d722dff@5a873ag.lt2.h1clayd.click:443?type=grpc&security=reality&pbk=-7jCGkgrVLVo1DgJrvOT_erdlIRf2IyVu1KGS409eBc&sid=40cdf901244028cb&sni=5a873ag.lt2.h1clayd.click&serviceName=8fcf9a0ebfb7&spx=%2F853ca9ab366a80d&support-x25519mlkem768=true&fp=edge": {
+    "success_count": 0,
+    "fail_count": 1,
+    "first_seen": 1793906850,
+    "name": "\ud83c\uddf1\ud83c\uddf9 Lithuania | [*CIDR]",
+    "last_test": 1793906850
+  },
+  "vless://1fc053ed-e9e8-49f2-b7c1-fde68d722dff@5a873ag.lt2.h1clayd.click:443?type=grpc&security=reality&pbk=-7jCGkgrVLVo1DgJrvOT_erdlIRf2IyVu1KGS409eBc&sid=40cdf901244028cb&sni=5a873ag.lt2.h1clayd.click&serviceName=8fcf9a0ebfb7&spx=%2F853ca9ab366a80d&support-x25519mlkem768=true&fp=safari": {
+    "success_count": 0,
+    "fail_count": 1,
+    "first_seen": 1793906850,
+    "name": "\ud83c\uddf1\ud83c\uddf9 Lithuania | [*CIDR]",
+    "last_test": 1793906850
+  },
+  "vless://1fc053ed-e9e8-49f2-b7c1-fde68d722dff@162afct.lt2.h1clayd.click:443?type=raw&security=reality&flow=xtls-rprx-vision&pbk=y_pzv7NPwU8d4gAC3r6f6FZN5vFmaKJK9YPEGOjSYB0&sid=51e7ad7303dba560&sni=162afct.lt2.h1clayd.click&support-x25519mlkem768=true&fp=firefox": {
+    "success_count": 1,
+    "fail_count": 0,
+    "first_seen": 1793906850,
+    "name": "\ud83c\uddf1\ud83c\uddf9 Lithuania | [*CIDR]",
+    "last_speed": 1.0,
+    "last_lat": 100,
+    "last_test": 1793906850
   }
 }
